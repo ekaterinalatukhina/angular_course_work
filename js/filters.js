@@ -28,3 +28,8 @@ app.filter('filterBySearchword', function(){
         return Math.floor(diff / 24 / 3600000) + ' days ago';
       }
    });
+app.filter('htmlToPlaintext', function() {
+      return function htmlToPlaintext(text) {
+        return text ? String(text).replace(/<[^>]+>/gm, '') : '';
+      }
+   });

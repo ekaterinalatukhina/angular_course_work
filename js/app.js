@@ -44,7 +44,6 @@
               </div>
               <div class="message col-sm-7">
                 <div class="clipper">
-                  <h3 ui-sref="mail({ boxId: $ctrl.email.box, emailId:$ctrl.email.id })" ui-sref-active="active" style="cursor:pointer;">{{$ctrl.email.subject}}</h3>
                   <h3 ui-sref="box.mail({emailId:$ctrl.email.id })" ui-sref-active="active" style="cursor:pointer;">{{$ctrl.email.subject}}</h3>
                   -
                   <p>{{$ctrl.email.body}}</p>
