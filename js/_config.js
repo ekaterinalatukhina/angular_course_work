@@ -49,6 +49,15 @@ $stateProvider.state({
  	}
   });
 
+$stateProvider.state({
+    name: 'newmail',
+    url: '/newmail/',
+    templateUrl: 'newemail.html',
+    controller: function($state, $scope, $stateParams) {
+ 	   
+ 	}
+  });
+
 
 
   $urlRouterProvider.otherwise('/box/1');

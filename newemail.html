@@ -17,27 +17,22 @@
 ">
 
   <li class="email-item row unread">
-     <div class="people col-sm-3">
-                <img src="img/profile.jpg" class="img-circle">
-                {{email.from}}
-     </div><!-- people -->
-
      <div class="message col-sm-7">
-                To: {{email.to}}
+                To: <input type="text" value="" />
      </div><!-- message -->
 
      <div class="date col-sm-2">
-         <date class="pull-right"><a ui-sref="box({ boxId: email.box })">X</a></date>
+         <date class="pull-right"><a ui-sref="box({ boxId: 1 })">X</a></date>
      </div><!-- date -->
   </li>
   <li class="email-item row unread">
     <div class=" col-sm-3">
-        <span class="people-names">{{email.subject}}</span>
+        Subject: <span class="people-names"><input type="text" value="" /></span>
     </div>
 
   </li>
   <li class="email-item row">
-    {{email.body}}
+   <textarea></textarea>
   
   </li>
 </div>
