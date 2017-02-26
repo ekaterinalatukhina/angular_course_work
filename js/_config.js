@@ -5,7 +5,7 @@ app.config(($stateProvider, $urlRouterProvider) => {
     url: '/box/:boxId',
     template: `
             <div ng-repeat="email in emails| filterBySearchword:$ctrl.searchWord"> 
-                 <email-line email="email" deleteline="$ctrl.deleteLine(email)"></email-line>
+                 <email-line email="email" deleteline="deleteLine(email)"></email-line>
               </div><ui-view></ui-view>
     `,
     resolve: {
@@ -23,6 +23,15 @@ app.config(($stateProvider, $urlRouterProvider) => {
               $scope.emails.push(emailList[i]);
           }
       }  
+      $scope.deleteLine  = (eml) => { 
+           for (var i = 0; i < $scope.emails.length; i++) {
+             console.log($scope.emails[i] == eml); 
+             if ($scope.emails[i] == eml) {
+               $scope.emails.splice(i, 1);
+               break;
+             }
+           }
+         };
           
  	}
   });

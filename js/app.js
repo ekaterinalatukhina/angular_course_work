@@ -2,6 +2,7 @@
 
   var app = angular.module('myApp', ['ui.router']);
 
+  // переделать компонент в стейт. Заинициализировать в нем юзерлист ?? 
   app.component('mailBox', {
       templateUrl:'mailBox.html',
       controller: function() {
