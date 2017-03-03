@@ -1,5 +1,6 @@
 app.filter('filterBySearchword', function(){
     return function(items, sw){
+      if (!sw) sw = '';
       var result = [];
       angular.forEach(items, function(item){
         if (((item.subject.toLowerCase().indexOf(sw.toLowerCase()) != -1) || (item.body.toLowerCase().indexOf(sw.toLowerCase()) != -1)) || (sw == '') ){

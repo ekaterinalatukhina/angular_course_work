@@ -1,19 +1,12 @@
 'use strict';
 
-  var app = angular.module('myApp', ['ui.router']);
+  var app = angular.module('myApp', ['ui.router','ui.bootstrap']);
 
-  // переделать компонент в стейт. Заинициализировать в нем юзерлист ?? 
-  app.component('mailBox', {
-      templateUrl:'mailBox.html',
-      controller: function() {
-        this.searchWord = '';
-      }
-  });
 
   app.component('boxList', {
     template: `
     <div ng-repeat="box in $ctrl.boxes">  
-      <li ui-sref="box({ boxId: box.id })" ui-sref-active="active" style="cursor:pointer;">
+      <li ui-sref="home.box({ boxId: box.id })" ui-sref-active="active" style="cursor:pointer;">
               {{box.name}}
             </li>
     </div>
@@ -45,7 +38,7 @@
               </div>
               <div class="message col-sm-7">
                 <div class="clipper">
-                  <h3 ui-sref="box.mail({emailId:$ctrl.email.id })" ui-sref-active="active" style="cursor:pointer;">{{$ctrl.email.subject}}</h3>
+                  <h3 ui-sref="home.box.mail({emailId:$ctrl.email.id })" ui-sref-active="active" style="cursor:pointer;"><b>{{$ctrl.email.subject}}</b></h3>
                   -
                   <p>{{$ctrl.email.body}}</p>
                 </div>
@@ -60,5 +53,34 @@
     bindings: {
        email: '<email',
        deleteLine:'&deleteline'
+    }
+  });
+
+  app.component('newMail', {
+    templateUrl: 'newemail.html',
+    controller: function() {  },
+    bindings: { 
+      userslist: '<'
+    }
+  });
+
+  app.component('addrLine', {
+    template: ` 
+            <li class="email-item row">
+              <div class="people col-sm-3">
+                <span class="people-names">
+                <h3 ui-sref="home.addressbook.edit({addressId:$ctrl.user.id })" style="cursor:pointer;"><b>{{$ctrl.user.name}}</b></h3>                  
+                </span>
+              </div>
+              <div class="message col-sm-7">
+                <div class="clipper">
+                  {{$ctrl.user.email}}                  
+                </div>
+              </div>
+            </li> 
+    `,
+    controller: function($element) { },
+    bindings: {
+       user: '<',
     }
   });

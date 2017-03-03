@@ -163,3 +163,22 @@ input.mail-select {
 .date {
   font-size: 13px;
 }
+
+.shadowbox {
+  position: fixed;
+    background: rgba(0,0,0,0.6);
+    margin: auto;
+    height: 100%;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 5;
+}
+
+.in-shadowbox {
+    position: absolute;
+    top: 0px;
+    padding: 20px;
+    width: 1200px;
+    z-index: 6;
+}

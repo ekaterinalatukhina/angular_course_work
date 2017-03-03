@@ -53,10 +53,7 @@
               </button>
             </li>
             <li>
-              <button class="text-btn btn btn-control">
-                <strong>More</strong>
-                <span class="caret"></span>
-              </button>
+              <a ui-sref="home.addressbook()">Address book</a>
             </li>
           </ul>
         </div><!-- controls -->
@@ -64,7 +61,7 @@
 
       <div class="mail row">
         <div class="sidebar col-sm-2">
-          <button class="compose btn btn-danger" ui-sref="newmail()">
+          <button class="compose btn btn-danger" ui-sref="home.newmail()">
             Compose
           </button>
 

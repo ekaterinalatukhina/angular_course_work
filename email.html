@@ -1,24 +1,9 @@
-<div style="
-    position: fixed;
-    background: rgba(0,0,0,0.6);
-    margin: auto;
-    height: 100%;
-    top: 0;
-    width: 100%;
-    left: 0;
-    z-index: 5;
-"></div >
-<div style="
-    position: absolute;
-    top: 0px;
-    padding: 20px;
-    width: 1200px;
-    z-index: 6;
-">
+<div class="shadowbox"></div >
+<div class="in-shadowbox">
 
   <li class="email-item row unread">
      <div class="people col-sm-3">
-                <img src="img/profile.jpg" class="img-circle">
+                <img src="http://s1.iconbird.com/ico/2013/7/393/w128h1281373800306despicableme2Minionicon5.png" width="25" class="img-circle">
                 {{email.from}}
      </div><!-- people -->
 
@@ -27,7 +12,7 @@
      </div><!-- message -->
 
      <div class="date col-sm-2">
-         <date class="pull-right"><a ui-sref="box({ boxId: email.box })">X</a></date>
+         <a ui-sref="home.box({ boxId: email.box })">X</a>
      </div><!-- date -->
   </li>
   <li class="email-item row unread">
